@@ -108,6 +108,29 @@ div.manilla{
     padding: 30px 30px 30px;
 }
 
+p.hint{
+    background-color: burlywood;
+    padding:10px;
+    border-radius: 5px;
+    
+}
+
+button{
+    background-color:burlywood;
+    text-decoration: none;
+    border: 0px;
+    border-style: solid;
+    border-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
+    margin-left:15px;
+}
+
+button.active{
+    background-color: darkgoldenrod;
+}
+
 th{
     background-color:#e5d072;
     text-align: center;
