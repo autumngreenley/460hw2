@@ -116,7 +116,7 @@ p.hint{
 }
 
 button{
-    background-color:burlywood;
+    background-color:darkgoldenrod;
     text-decoration: none;
     border: 0px;
     border-style: solid;
@@ -127,8 +127,18 @@ button{
     margin-left:15px;
 }
 
+input.submit{
+    background-color:aqua;
+    border-style:solid;
+    border-width:0px;
+    border-radius: 3px;
+    padding-left:6px;
+    padding-right:6px;
+    margin: 3px;
+}
+
 button.active{
-    background-color: darkgoldenrod;
+    background-color: burlywood;
 }
 
 th{
