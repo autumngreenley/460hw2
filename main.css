@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    margin-top: .8em;
+    margin-top: .0em;
 }
 
 a {
@@ -112,6 +112,7 @@ p.hint{
     background-color:whitesmoke;
     padding:10px;
     border-radius: 5px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.16);
     
 }
 
@@ -129,6 +130,15 @@ button{
 
 button.activehint{
     background-color: whitesmoke;
+}
+
+div.riddle{
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-bottom:20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.16);
 }
 
 input[type=button]{
