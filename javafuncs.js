@@ -57,7 +57,7 @@ function selectriddle() {
         
         
     }else if(document.getElementById("currentriddle").value=='riddle2'){
-        $("#currentriddle").after("<div class='riddle'><h2>Sausage Thief</h2><button type='button' class='activehint' id='hint0' onclick='hint0active()'>----></button><button type='button' class='inactivehint' id='hint1b' onclick='hint1bactive()'>Hint #1</button><button type='button' class='inactivehint' id='hint2b' onclick='hint2bactive()'>Hint #2</button><button type='button' class='inactivehint' id='hint3b' onclick='hint3bactive()'>Hint #3</button><p class='hint'>If you'd like a hint, press one of the buttons above.</p><form id='solution2'><p>Somebody ate the butcher's sausages! Here's what these four boys have to say:</p><input type='radio' id='a' name='riddle2' value='0'><label for='a'>A: 'B ate the sausages!'</label><br><input type='radio' id='b' name='riddle2' value='0'><label for='b'>B: 'D ate them all up!'</label><br><input type='radio' id='c' name='riddle2' value='1'><label for='c'>C: 'I didn't eat them, no way!'</label><br><input type='radio' id='d' name='riddle2' value='0'><label for='d'>D: 'B's totally lying!'</label><br><p>Only one of these rascals is telling the truth and all the others are, needless to say, lying. Can you figure out who ate the sausages?</p><input type='button' value='Check Solution' onclick='checksolution2()'></form></div>");
+        $("#currentriddle").after("<div class='riddle'><h2>Sausage Thief</h2><button type='button' class='activehint' id='hint0' onclick='hint0active()'>----></button><button type='button' class='inactivehint' id='hint1b' onclick='hint1bactive()'>Hint #1</button><button type='button' class='inactivehint' id='hint2b' onclick='hint2bactive()'>Hint #2</button><button type='button' class='inactivehint' id='hint3b' onclick='hint3bactive()'>Hint #3</button><p class='hint'>If you'd like a hint, press one of the buttons above.</p><form id='solution2'><p>Somebody ate the butcher's sausages! Here's what these four boys have to say:</p><input type='radio' id='a' name='riddle2' value='0'><label for='a'>A: 'B ate the sausages!'</label><br><input type='radio' id='b' name='riddle2' value='0'><label for='b'>B: 'D ate them all up!'</label><br><input type='radio' id='c' name='riddle2' value='1'><label for='c'>C: 'I didn't eat them, no way!'</label><br><input type='radio' id='d' name='riddle2' value='0'><label for='d'>D: 'B's totally lying!'</label><br><p>Only one of these rascals is telling the truth and all the others are, needless to say, lying. Can you figure out who ate the sausages?</p><input type='button' value='Check Solution' onclick='checksolution2()' class='submitanswer'></form></div>");
     }else {
         console.log("...");
     }
@@ -80,10 +80,10 @@ function checksolution1(){
     console.log($("#answer1").val());
     if($("#answer1").val() == '1'){
         console.log("Yay!");
-        $("#solution1").after("<div id='rightorwrong'><br><p>Yay! You absolutely nailed it!</p></div>")
+        $("#solution1").after("<div id='rightorwrong'><br><p><b>You got it!</b><br><br>In one minute, horse A will have done two laps, horse B will have done three laps, horse C will have done four laps, and all the horses will be lined up at the starting line.<br><br>The horses will be lined up at the starting line after one minute.</p></div>")
     }else{
         console.log("Darn...");
-        $("#solution1").after("<div id='rightorwrong'><br><p>Hm... That's not quite it. Try again, maybe?</p></div>")
+        $("#solution1").after("<div id='rightorwrong'><br><p>Too bad!<br><br>Don't bother with complicated calculations.</p></div>")
     }
 }
 
@@ -94,7 +94,7 @@ function checksolution2(){
     
     if($("input[name='riddle2']:checked").val()==1){
         console.log("Yay");
-        $("#solution2").after("<div id='rightorwrong'><br><p>Yay! You absolutely nailed it!</p></div>")
+        $("#solution2").after("<div id='rightorwrong'><br><p><b>Correct!</b> C ate the sausages, and the only person telling the truth here is D.<br><br>If you assume A to be the culprit, both C's and D's statements must be correct. Choose B, and the other three boys' statements must be true. If you make D out to be the criminal, then what both B and C are saying must be true.<br><br>None of these possibilities fit the conditions set forth in the puzzle.</p></div>")
     }else{
         console.log("Boo");
         $("#solution2").after("<div id='rightorwrong'><br><p>Hm... That's not quite it. Try again, maybe?</p></div>")

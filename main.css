@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    margin-top: 1.3em;
+    margin-top: .8em;
 }
 
 a {
@@ -109,14 +109,14 @@ div.manilla{
 }
 
 p.hint{
-    background-color: burlywood;
+    background-color:whitesmoke;
     padding:10px;
     border-radius: 5px;
     
 }
 
 button{
-    background-color:darkgoldenrod;
+    background-color:lightgrey;
     text-decoration: none;
     border: 0px;
     border-style: solid;
@@ -127,6 +127,19 @@ button{
     margin-left:15px;
 }
 
+button.activehint{
+    background-color: whitesmoke;
+}
+
+input[type=button]{
+    background-color:lightgrey;
+    border-radius: 3px;
+    padding-left:6px;
+    padding-right:6px;
+    margin: 3px;
+}
+
+
 input.submit{
     background-color:aqua;
     border-style:solid;
@@ -135,10 +148,6 @@ input.submit{
     padding-left:6px;
     padding-right:6px;
     margin: 3px;
-}
-
-button.activehint{
-    background-color: burlywood;
 }
 
 button:focus{
