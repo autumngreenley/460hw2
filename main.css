@@ -137,8 +137,12 @@ input.submit{
     margin: 3px;
 }
 
-button.active{
+button.activehint{
     background-color: burlywood;
+}
+
+button:focus{
+    outline:0;
 }
 
 th{
