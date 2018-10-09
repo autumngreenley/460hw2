@@ -51,13 +51,52 @@ function selectriddle() {
     }
     
     if(document.getElementById("currentriddle").value=='riddle1'){
-        $("#currentriddle").after("<div class='riddle'><h2>Racetrack Riddle</h2><button type='button' class='activehint' id='hint0' onclick='hint0active()'>----></button><button type='button' class='inactivehint' id='hint1' onclick='hint1active()'>Hint #1</button><button type='button' class='inactivehint' id='hint2' onclick='hint2active()'>Hint #2</button><button type='button' class='inactivehint' id='hint3' onclick='hint3active()'>Hint #3</button><p class='hint'>If you'd like a hint, press one of the buttons above.</p><p>The distance three racehorses can run around the racetrack in one minute is listed below.</p><p>Horse A: Two laps.<br>Horse B: Three laps.<br>Horse C: Four laps.<br></p><p>The horses line up at the starting line and start running in the same direction. How many minutes will pass before all three horses line up at the starting line again?</p><form><input type='text'><br><input type='submit' value='Submit' class='submit'></form></dev>");
+        $("#currentriddle").after("<div class='riddle'><h2>Racetrack Riddle</h2><button type='button' class='activehint' id='hint0' onclick='hint0active()'>----></button><button type='button' class='inactivehint' id='hint1' onclick='hint1active()'>Hint #1</button><button type='button' class='inactivehint' id='hint2' onclick='hint2active()'>Hint #2</button><button type='button' class='inactivehint' id='hint3' onclick='hint3active()'>Hint #3</button><p class='hint'>If you'd like a hint, press one of the buttons above.</p><p>The distance three racehorses can run around the racetrack in one minute is listed below.</p><p>Horse A: Two laps.<br>Horse B: Three laps.<br>Horse C: Four laps.<br></p><p>The horses line up at the starting line and start running in the same direction. How many minutes will pass before all three horses line up at the starting line again?</p><form id='solution1'><input type='text' id='answer1'><br><input type='button' value='Check Solution' onclick='checksolution1()'></form></div></dev>");
+        
+
+        
+        
     }else if(document.getElementById("currentriddle").value=='riddle2'){
-        $("#currentriddle").after("<div class='riddle'><h2>Sausage Thief</h2><button type='button' class='activehint' onclick='activetoinactive()'>Hint #1</button><button type='button' class='inactivehint'>Hint #2</button><button type='button' class='inactivehint'>Hint #3</button><p class='hint'><b>Hint 1</b><br>So you just need to consider...</p><form><p>Somebody ate the butcher's sausages! Here's what these four boys have to say:</p><input type='radio' id='a' name='riddle2' value='a'><label for='a'>A: 'B ate the sausages!'</label><br><input type='radio' id='b' name='riddle2' value='b'><label for='b'>B: 'D ate them all up!'</label><br><input type='radio' id='c' name='riddle2' value='c'><label for='c'>C: 'I didn't eat them, no way!'</label><br><input type='radio' id='d' name='riddle2' value='d'><label for='d'>D: 'B's totally lying!'</label><br><p>Only one of these rascals is telling the truth and all the others are, needless to say, lying. Can you figure out who ate the sausages?</p><input type='submit' value='Submit' class='submit'></form></div>");
+        $("#currentriddle").after("<div class='riddle'><h2>Sausage Thief</h2><button type='button' class='activehint' id='hint0' onclick='hint0active()'>----></button><button type='button' class='inactivehint' id='hint1b' onclick='hint1bactive()'>Hint #1</button><button type='button' class='inactivehint' id='hint2b' onclick='hint2bactive()'>Hint #2</button><button type='button' class='inactivehint' id='hint3b' onclick='hint3bactive()'>Hint #3</button><p class='hint'>If you'd like a hint, press one of the buttons above.</p><form id='solution2'><p>Somebody ate the butcher's sausages! Here's what these four boys have to say:</p><input type='radio' id='a' name='riddle2' value='0'><label for='a'>A: 'B ate the sausages!'</label><br><input type='radio' id='b' name='riddle2' value='0'><label for='b'>B: 'D ate them all up!'</label><br><input type='radio' id='c' name='riddle2' value='1'><label for='c'>C: 'I didn't eat them, no way!'</label><br><input type='radio' id='d' name='riddle2' value='0'><label for='d'>D: 'B's totally lying!'</label><br><p>Only one of these rascals is telling the truth and all the others are, needless to say, lying. Can you figure out who ate the sausages?</p><input type='button' value='Check Solution' onclick='checksolution2()'></form></div>");
     }else {
         console.log("...");
     }
+}
+
+
+
+
+
+
+$("#solution1").submit(function(e) {
+    e.preventDefault();
+});
+
+function checksolution1(){
+    if($("#rightorwrong").length){
+        $("#rightorwrong").remove();
+    }
     
+    console.log($("#answer1").val());
+    if($("#answer1").val() == '1'){
+        console.log("Yay!");
+        $("#solution1").after("<div id='rightorwrong'><br><p>Yay! You absolutely nailed it!</p></div>")
+    }else{
+        console.log("Darn...");
+        $("#solution1").after("<div id='rightorwrong'><br><p>Hm... That's not quite it. Try again, maybe?</p></div>")
+    }
+}
+
+function checksolution2(){
+    if($("#rightorwrong").length){
+        $("#rightorwrong").remove();
+    }
     
-    
+    if($("input[name='riddle2']:checked").val()==1){
+        console.log("Yay");
+        $("#solution2").after("<div id='rightorwrong'><br><p>Yay! You absolutely nailed it!</p></div>")
+    }else{
+        console.log("Boo");
+        $("#solution2").after("<div id='rightorwrong'><br><p>Hm... That's not quite it. Try again, maybe?</p></div>")
+    }
 }
